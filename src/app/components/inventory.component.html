@@ -1,0 +1,11 @@
+<p>
+  The following items are available in inventory:
+</p>
+<div *ngFor="let item of inventoryList;">
+  <img src="/assets/fruits/{{ item.image }}" alt="Picture of {{ item.label }}" class="thumbnail">
+  <br> <span class="item-label">Name: {{ item.label }}</span>
+  <br> Quantity: {{ item.quantity }}
+  <br><button type="button" (click)="processItem(item.label)" [disabled]="item.quantity <= 0">Add {{ item.label }} to Cart!</button>
+  <br>
+  <br>
+</div>

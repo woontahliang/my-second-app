@@ -1,0 +1,15 @@
+<p>
+  The following items are in cart:
+</p>
+<div *ngIf="cartList.length <= 0">
+  <h3>Your cart is empty</h3>
+</div>
+
+<div *ngFor="let item of cartList; let i = index;">
+  <br> <span class="item-label">Name: {{ item.label }}</span>
+  <br> Quantity: {{ item.quantity }}
+  <br><button type="button" (click)="processItem(item.label)" [disabled]="item.quantity <= 0">Remove {{ item.label }} from
+    Cart!</button>
+  <br>
+  <br>
+</div>
